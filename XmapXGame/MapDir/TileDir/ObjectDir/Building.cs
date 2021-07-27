@@ -7,7 +7,7 @@ namespace XmapXGame
     class Building : Object
     {
 
-        private enum type { House }
+        private enum buildings { House }
 
     }
 }

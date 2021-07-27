@@ -8,15 +8,17 @@ namespace XmapXGame
     class Tile
     {
 
-        public Point location { get => location; set => location = value; } // e.g. (0,1)
+        private Point location; // e.g. (0,1)
+        public Point Location { get => location; set => location = value; }
 
-        public int size { get => size; set => size = value; } // e.g. 50
+        private int size; // e.g. 50
+        public int Size { get => size; set => size = value; }
 
-        public Ground ground { get => ground; set => ground = value; }
+        private Ground ground;
+        public Ground Ground { get => ground; set => ground = value; }
 
-        public Object objct { get => objct; set => objct = value; }
-
-
+        private Object objct;
+        public Object Objct { get => objct; set => objct = value; }
 
         public Tile generateTile(Point location, int size, Ground ground, Object objct)
         {
@@ -25,13 +27,22 @@ namespace XmapXGame
 
         }
 
-        public Tile generateTileRandom(Point location, int size = 50)
+        public Tile generateTileRandom(Point location, int size)
         {
 
-            return generateTile(location, size, new Ground().generateRandomGround(), objct);
+            return generateTile(new Point(/*1 +*/ (location.X - 1) * size, /*1 +*/ (location.Y - 1) * size), size, new Ground().generateRandomGround(), objct);
 
         }
 
 
     }
 }
+
+/*
+ * size 50
+ * 1,1 = 1,1
+ * 2,1 = 51,1
+ * 3,1 = 101,0
+ * 
+ * 
+ * */

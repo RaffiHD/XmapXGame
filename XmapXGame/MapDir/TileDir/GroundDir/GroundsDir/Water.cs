@@ -8,8 +8,11 @@ namespace XmapXGame
     class Water : Groundtype
     {
 
-        public static new Image image = Properties.Resources.water_50x50;
+        private string name = "Water";
+        public string Name { get => name; set => name = value; }
 
+        private Image image = Properties.Resources.water_50x50;
 
+        public Image Image { get => image; set => image = value; }
     }
 }

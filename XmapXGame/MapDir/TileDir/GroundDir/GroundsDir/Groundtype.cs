@@ -8,13 +8,21 @@ namespace XmapXGame
     class Groundtype
     {
 
-        public Image image { get => image; set => image = value; }
+        private string type;
+        public string Type { get => type; set => type = value; }
 
-        public Groundtype[] getGroundtypes()
+        private Image picture;
+        public Image Picture { get => picture; set => picture = value; }
+
+        public List<Groundtype> getGroundtypes()
         {
 
-            return new Groundtype[] { (Groundtype)new Dirt(), (Groundtype)new Grass(), (Groundtype)new Sand(), (Groundtype)new Water() };
+            Dirt dirt = new Dirt();
+            Grass grass = new Grass();
+            Sand sand = new Sand();
+            Water water = new Water();
 
+            return new List<Groundtype> { new Groundtype { type = dirt.Name, picture = dirt.Image }, new Groundtype { type = grass.Name, picture = grass.Image }, new Groundtype { type = sand.Name, picture = water.Image }, new Groundtype { type = water.Name, picture = water.Image } };
 
         }
 

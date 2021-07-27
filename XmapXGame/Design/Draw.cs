@@ -6,43 +6,37 @@ using System.Windows.Forms;
 
 namespace XmapXGame
 {
-    class Draw : Form
+    class Draw
     {
 
-        private Graphics graphics;
+        XmapXGame.FormGame formGame;
 
-        public Draw()
+        public Draw(XmapXGame.FormGame form)
         {
-
+            formGame = form;
         }
 
-        public Graphics Graphics { get => graphics; set => graphics = value; }
-
-        public void drawMap()
+        public void drawMap(List<List<Tile>> map)
         {
 
-            List<List<Tile>> map = new Map().map;
-            if (map.Count == 0)
-            {
-                return;
-            }
-
-            foreach (List<Tile> tileRow in map)
+            if (map.Count > 0)
             {
 
-                foreach (Tile tile in tileRow)
+                foreach (List<Tile> tileRow in map)
                 {
 
-                    drawTile(tile.location, tile.ground.type.image);
+                    foreach (Tile tile in tileRow)
+                    {
+
+                        drawTile(tile.Location, tile.Ground.Type.Picture);
+                    }
                 }
             }
-
         }
 
         public void drawTile(Point location, Image image)
         {
-            graphics.DrawImage(image, location);
-
+            formGame.drawImage(location, image);
         }
 
     }

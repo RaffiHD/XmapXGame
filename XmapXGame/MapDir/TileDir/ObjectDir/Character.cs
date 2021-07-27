@@ -6,5 +6,8 @@ namespace XmapXGame
 {
     class Character : Object
     {
+
+        private enum characters { };
+
     }
 }

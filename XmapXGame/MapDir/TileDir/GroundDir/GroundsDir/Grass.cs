@@ -8,7 +8,11 @@ namespace XmapXGame
     class Grass : Groundtype
     {
 
-        public static new Image image = Properties.Resources.grass_50x50;
+        private string name = "Grass";
+        public string Name { get => name; set => name = value; }
 
+        private Image image = Properties.Resources.grass_50x50;
+
+        public Image Image { get => image; set => image = value; }
     }
 }

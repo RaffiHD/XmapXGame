@@ -7,14 +7,16 @@ namespace XmapXGame
     class Ground
     {
 
-        public Groundtype type { get => type; set => type = value; }
-
+        private Groundtype type;
+        public Groundtype Type { get => type; set => type = value; }
 
         public Ground generateRandomGround()
         {
-            Groundtype[] groundtypes = new Groundtype().getGroundtypes();
+            List<Groundtype> groundtypes = new Groundtype().getGroundtypes();
+            int number = new Random().Next(0, groundtypes.Count);
 
-            return new Ground { type = new Groundtype { image = groundtypes[new Random().Next(0, groundtypes.Length)].image } };
+            return new Ground { Type = new Groundtype { Type = groundtypes[number].Type, Picture = groundtypes[number].Picture } };
+
         }
 
     }

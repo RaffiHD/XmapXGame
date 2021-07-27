@@ -12,13 +12,18 @@ namespace XmapXGame
 {
     public partial class FormGame : Form
     {
-        Draw draw;
+        Graphics graphics;
+
+        List<List<Tile>> map;
+
+        int tilesX = 10;
+        int tilesY = 10;
+        int sizeMap = 25;
 
         public FormGame()
         {
-            InitializeComponent(); // ÜBERALL GETTER SETTER BERICHTIGEN
-            draw = new Draw();            
-            draw.Graphics = panelMap.CreateGraphics();
+            InitializeComponent(); // ÜBERALL GETTER SETTER BERICHTIGEN            // DRAW.cs nur für draw Logik und das tatsächliche draw hier in der FORMGame.cs
+            graphics = panelMap.CreateGraphics();
 
         }
 
@@ -30,16 +35,52 @@ namespace XmapXGame
 
         private void buttonGenerateMap_Click(object sender, EventArgs e)
         {
-
-            new Map().generateMap();
-
+            buttonGenerateMap.Enabled = false;
+            generateMap();
+            buttonGenerateMap.Enabled = true;
         }
 
         private void buttonDrawMap_Click(object sender, EventArgs e)
         {
+            buttonDrawMap.Enabled = false;
+            drawMap(this);
+            buttonDrawMap.Enabled = true;
+        }
+        public void drawImage(Point location, Image image)
+        {
+            graphics.DrawImage(image, location);
 
-            new Draw().drawMap();
+        }
 
+        private void generateMap(int tilesX = 10, int tilesY = 10, int size = 25)
+        {
+            map = new Map().generateMap(tilesX, tilesY, size);
+
+        }
+        private void drawMap(FormGame form)
+        {
+            new Draw(form).drawMap(map);
+
+        }
+
+        private void buttonGenerateDrawMap_Click(object sender, EventArgs e)
+        {
+            buttonGenerateDrawMap.Enabled = false;
+
+            tilesX = Convert.ToInt16(numericUpDownTilesX.Value);
+            tilesY = Convert.ToInt16(numericUpDownTilesY.Value);
+            sizeMap = Convert.ToInt16(numericUpDownSizeMap.Value);
+
+            generateMap(tilesX, tilesY, sizeMap);
+            drawMap(this);
+
+            buttonGenerateDrawMap.Enabled = true;
+
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            graphics.Clear(Color.White);
         }
     }
 }

@@ -6,5 +6,8 @@ namespace XmapXGame
 {
     class Object
     {
+
+        private enum objects { };
+
     }
 }
