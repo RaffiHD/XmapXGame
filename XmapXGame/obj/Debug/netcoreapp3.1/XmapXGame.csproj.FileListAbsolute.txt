@@ -1,4 +1,3 @@
-C:\Users\User\Documents\Visual Studio 2019\Projects\XmapXGame\XmapXGame\obj\Debug\netcoreapp3.1\XmapXGame.csproj.AssemblyReference.cache
 C:\Users\User\Documents\Visual Studio 2019\Projects\XmapXGame\XmapXGame\obj\Debug\netcoreapp3.1\XmapXGame.FormGame.resources
 C:\Users\User\Documents\Visual Studio 2019\Projects\XmapXGame\XmapXGame\obj\Debug\netcoreapp3.1\XmapXGame.Properties.Resources.resources
 C:\Users\User\Documents\Visual Studio 2019\Projects\XmapXGame\XmapXGame\obj\Debug\netcoreapp3.1\XmapXGame.csproj.GenerateResource.cache
@@ -14,3 +13,4 @@ C:\Users\User\Documents\Visual Studio 2019\Projects\XmapXGame\XmapXGame\bin\Debu
 C:\Users\User\Documents\Visual Studio 2019\Projects\XmapXGame\XmapXGame\obj\Debug\netcoreapp3.1\XmapXGame.dll
 C:\Users\User\Documents\Visual Studio 2019\Projects\XmapXGame\XmapXGame\obj\Debug\netcoreapp3.1\XmapXGame.pdb
 C:\Users\User\Documents\Visual Studio 2019\Projects\XmapXGame\XmapXGame\obj\Debug\netcoreapp3.1\XmapXGame.genruntimeconfig.cache
+C:\Users\User\Documents\Visual Studio 2019\Projects\XmapXGame\XmapXGame\obj\Debug\netcoreapp3.1\XmapXGame.csproj.AssemblyReference.cache

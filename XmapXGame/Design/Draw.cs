@@ -9,34 +9,50 @@ namespace XmapXGame
     class Draw
     {
 
-        XmapXGame.FormGame formGame;
+        FormGame formGame;
 
-        public Draw(XmapXGame.FormGame form)
+        public Draw(FormGame form)
         {
             formGame = form;
         }
 
-        public void drawMap(List<List<Tile>> map)
+        public FormGame drawMap(Map map)
         {
 
-            if (map.Count > 0)
+            if (map._Map.Count > 0)
             {
 
-                foreach (List<Tile> tileRow in map)
+                foreach (List<Tile> tileRow in map._Map)
                 {
 
                     foreach (Tile tile in tileRow)
                     {
 
-                        drawTile(tile.Location, tile.Ground.Type.Picture);
+                        drawTile(tile);
                     }
                 }
             }
+
+            return formGame;
+
         }
 
-        public void drawTile(Point location, Image image)
+        public void drawTile(Tile tile)
         {
-            formGame.drawImage(location, image);
+
+            if (tile._Ground != null)
+            {
+                formGame.drawImage(tile._Location, tile._Ground._Picture); // draw ground
+
+            }
+
+            if (tile._Objct != null)
+            {
+                formGame.drawImage(tile._Location, tile._Objct._Picture); // draw object
+
+            }
+
+
         }
 
     }

@@ -7,8 +7,12 @@ namespace XmapXGame
 {
     class Map
     {
+        public Map() { }
 
-        public List<List<Tile>> generateMap(int tilesX, int tilesY, int size)
+        private List<List<Tile>> _map = new List<List<Tile>>();
+        public List<List<Tile>> _Map { get => _map; set => _map = value; }
+
+        public Map generateMap(int tilesX, int tilesY, int size)
         {
             Tile tile = new Tile();
 
@@ -20,23 +24,25 @@ namespace XmapXGame
 
                 for (int x = 0; x < tilesX; x++)
                 {
-                    newTileRow.Add(tile.generateTileRandom(new Point(x+1, y+1), size));
+                    newTileRow.Add(tile.generateTile(new Point(x * size, y * size), size, new Ground().generateRandomGround()));
                 }
 
                 newMap.Add(newTileRow);
             }
 
-            return newMap;
+            _Map = newMap;
+
+            return this;
         }
 
         public void loadMap()
         {
-            // map = ...
+            // return = ...
         }
 
-        public void saveMap()
+        public void saveMap(Map map)
         {
-            // ... = map
+            // ...
         }
 
     }

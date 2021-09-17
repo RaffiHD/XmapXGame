@@ -5,14 +5,13 @@ using System.Text;
 
 namespace XmapXGame
 {
-    class Sand : Groundtype
+    class House : Building
     {
 
-        private string name = "Sand";
-        public string Name { get => name; set => name = value; }
+        public House() { }
 
-        private Image image = Properties.Resources.sand_50x50;
-
+        private Image image = Properties.Resources.sand_50x50; // !
         public Image Image { get => image; set => image = value; }
+
     }
 }
